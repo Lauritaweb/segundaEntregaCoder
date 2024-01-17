@@ -1,0 +1,39 @@
+// productos destacados
+.productos-destacados{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px 50px;
+    figure.productos{
+        border: 1px solid $secondaryColor;
+        border-radius: 10px;
+        width: 30%;
+        margin-bottom: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width: 100%;
+        }
+        figcaption{
+            color: $mainColor;
+            font-size:1.4em;
+            margin-bottom: 10px;
+        }
+        a{
+            background-color: $mainColor;
+            color: $white;
+            padding: 4px 30px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+        }
+        p{
+            font-size: 1.1em;
+            line-height: 1.4em;
+            margin-bottom: 30px;
+        }
+    }
+}

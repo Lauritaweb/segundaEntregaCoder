@@ -1,0 +1,40 @@
+// bem
+.about{
+    padding: 10px 30px;
+    &__box{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        &--reverse{
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+    }
+    &__header{
+        &--left{
+            text-align: left;
+            margin: 10px 0;
+        }
+    }
+    &__text--md{
+        font-size: 1.1em;
+    }
+    &__link--left{
+        display: block;
+        text-align: left;
+        color:$mainColor;
+        text-decoration: none;
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+    &__list--gray{
+        color: gray;
+        list-style: square;
+        padding-left: 80px;
+        font-size: 1.2em;
+        line-height: 1.4em;
+        font-weight: 300;
+        margin: 10px 0;
+    }
+}

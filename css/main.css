@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Nunito", sans-serif;
+  color: deeppink;
+  font-weight: 300;
+}
+
+p {
+  color: rgb(128, 128, 128);
+  line-height: 1.6em;
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1.8em;
+}
+
+h2 {
+  font-size: 2.4em;
+  text-align: center;
+}
+
+footer {
+  background-color: deeppink;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer img {
+  width: 50px;
+}
+
+/* Clases utilitarias */
+.text-pink {
+  color: deeppink;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.bg-pattern {
+  background-image: url(../img/backgrounds/bubble.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.bg-grey {
+  background-color: rgb(128, 128, 128);
+}
+
+.bg-light {
+  background-color: rgb(233, 233, 231) !important;
+}
+
+.bg-pink {
+  background-color: deeppink;
+  color: rgb(244, 238, 238);
+}
+
+.bg-pink:hover {
+  background-color: rgb(16, 15, 15);
+  color: rgb(244, 238, 238);
+}
+
+/* Encabezado */
+header img {
+  width: 100%;
+}
+
+.card h2 {
+  color: deeppink;
+  font-size: 1.2em;
+  font-weight: 300;
+  text-align: left;
+}
+
+.menu {
+  background-color: deeppink;
+  padding: 8px 30px;
+}
+.menu svg {
+  width: 30px;
+  fill: rgb(244, 238, 238);
+}
+.menu .navbar-toggler {
+  border: solid rgb(244, 238, 238) 1px;
+}
+.menu img {
+  width: 180px;
+}
+@media (width <= 320px) {
+  .menu img {
+    width: 140px;
+  }
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+.menu ul li {
+  margin-right: 20px;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: rgb(244, 238, 238);
+  font-size: 20px;
+}
+.menu ul li a:hover {
+  text-decoration: underline;
+  color: rgb(16, 15, 15);
+}
+
+.productos-destacados {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px 50px;
+}
+.productos-destacados figure.productos {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 10px;
+  width: 30%;
+  margin-bottom: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.productos-destacados figure.productos img {
+  width: 100%;
+}
+.productos-destacados figure.productos figcaption {
+  color: deeppink;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.productos-destacados figure.productos a {
+  background-color: deeppink;
+  color: rgb(244, 238, 238);
+  padding: 4px 30px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+}
+.productos-destacados figure.productos p {
+  font-size: 1.1em;
+  line-height: 1.4em;
+  margin-bottom: 30px;
+}
+
+.about {
+  padding: 10px 30px;
+}
+.about__box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.about__box--reverse {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+.about__header--left {
+  text-align: left;
+  margin: 10px 0;
+}
+.about__text--md {
+  font-size: 1.1em;
+}
+.about__link--left {
+  display: block;
+  text-align: left;
+  color: deeppink;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.about__list--gray {
+  color: gray;
+  list-style: square;
+  padding-left: 80px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+/* TIENDA */
+.store {
+  display: grid;
+  grid-template-columns: 20% repeat(2, 1fr);
+  grid-template-rows: 80px repeat(3, 300px);
+  grid-template-areas: "actions actions actions" "filters prod1 prod1" "filters prod2 prod3" "filters prod2 prod4";
+  gap: 5px;
+}
+.store .actions {
+  padding: 0 30px;
+  grid-area: actions;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.store .actions button {
+  margin-left: 10px;
+  background-color: deeppink;
+  color: rgb(244, 238, 238);
+  padding: 6px;
+  border: none;
+  border-radius: 3px;
+}
+.store .actions input {
+  padding: 6px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(244, 238, 238);
+}
+.store .filters {
+  padding: 0 20px 30px 30px;
+  grid-area: filters;
+}
+.store .filters a {
+  color: rgb(128, 128, 128);
+  font-size: 1em;
+  text-decoration: none;
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+.store .filters a:hover {
+  color: deeppink;
+}
+.store .filters span {
+  display: block;
+  color: rgb(16, 15, 15);
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.store .filters select {
+  color: deeppink;
+  border: none;
+  background-color: rgb(244, 238, 238);
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+.store .filters li {
+  padding-left: 10px;
+  list-style: none;
+}
+.store .prod1 {
+  grid-area: prod1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.store .prod1 p {
+  width: 50%;
+  margin-left: 20px;
+}
+.store .prod2 {
+  grid-area: prod2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.store .prod3 {
+  grid-area: prod3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store .prod4 {
+  grid-area: prod4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store section {
+  border-radius: 10px;
+}
+
+/* ==== inicia responsive ======= */
+@media (width < 992px) {
+  /* index */
+  .productos-destacados figure.productos {
+    width: 44%;
+  }
+  /* store */
+  .store {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "actions" "." "prod1" "prod2" "prod3" "prod4";
+  }
+  .store .actions {
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .store .actions input {
+    background-color: rgb(104, 97, 98);
+  }
+  .store .prod1 {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .store .prod1 p {
+    width: 100%;
+  }
+}
+@media (width < 768px) {
+  .productos-destacados figure.productos {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

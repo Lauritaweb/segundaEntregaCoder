@@ -1,0 +1,101 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+// vars
+$mainFont:'Nunito', sans-serif;
+$secondFont: Verdana, sans-serif;
+// weights
+$light:300;
+$regular:400;
+$bold:600;
+// colors
+$mainColor: deeppink;
+$secondaryColor: rgb(128, 128, 128);
+$white:rgb(244, 238, 238);
+$black:rgb(16, 15, 15);
+// sizies
+$sm:0.8em;
+$md:1em;
+$lg:1.6em;
+$xl:2em;
+$xxl:3em;
+// todo lo general
+*{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3{
+    font-family:$mainFont;
+    color:$mainColor;
+    font-weight: $light;
+}
+p{
+    color: $secondaryColor;
+    line-height: $lg;
+    font-size: $md;
+}
+h1{
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1.8em;
+}
+h2{
+    font-size: 2.4em;
+    text-align: center;
+}
+footer{
+    background-color: deeppink;
+}
+    footer ul{
+        list-style:none;
+    }
+    footer a{
+        color: white;
+        text-decoration: none;
+    }
+    footer img{
+        width: 50px;
+    }
+/* Clases utilitarias */
+.text-pink{
+    color:$mainColor;
+}
+.text-bold{
+    font-weight: $bold;
+}
+.text-italic{
+    font-style: italic;
+}
+.bg-pattern{
+    background-image: url(../img/backgrounds/bubble.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+.bg-grey{
+    background-color:$secondaryColor;
+}
+.bg-light{
+    background-color: rgb(233, 233, 231)!important;
+}
+.bg-pink{
+    background-color:$mainColor;
+    color:$white;
+}
+.bg-pink:hover{
+    background-color:$black;
+    color:$white;
+}
+/* Encabezado */
+header img{
+    width: 100%;
+}
+// cards
+.card{
+    h2{
+        color: $mainColor;
+        font-size: 1.2em;
+        font-weight: $light;
+        text-align: left;
+    }
+}

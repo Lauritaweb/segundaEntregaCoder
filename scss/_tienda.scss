@@ -1,0 +1,102 @@
+/* TIENDA */
+.store{
+    display: grid;
+    grid-template-columns: 20% repeat(2,1fr);
+    grid-template-rows:80px repeat(3,300px);
+    grid-template-areas: 
+    "actions actions actions"
+    "filters prod1 prod1"
+    "filters prod2 prod3"
+    "filters prod2 prod4";
+    gap: 5px;
+    .actions{
+        padding: 0 30px;
+        grid-area: actions;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        button{
+            margin-left: 10px;
+            background-color:$mainColor;
+            color: $white;
+            padding: 6px;
+            border: none;
+            border-radius: 3px;
+        }
+        input{
+            padding: 6px;
+            border-radius: 3px;
+            border: none;
+            background-color: $white;
+        }
+    }
+    .filters{
+        padding: 0 20px 30px 30px;
+        grid-area: filters;
+        a{
+            color:$secondaryColor;
+            font-size: $md;
+            text-decoration: none;
+            margin-bottom: 4px;
+            text-transform: lowercase;
+            &:hover{
+                color:$mainColor;
+            }
+        }
+        span{
+            display: block;
+            color:$black;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+        select{
+            color:$mainColor;
+            border: none;
+            background-color:$white;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        li{
+            padding-left: 10px;
+            list-style: none;
+        }
+    }
+    .prod1{
+       grid-area: prod1;
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       p{
+           width: 50%;
+           margin-left: 20px;
+       }
+    }
+    .prod2{
+        grid-area: prod2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .prod3{
+        grid-area: prod3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prod4{
+        grid-area: prod4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section{
+        border-radius: 10px;
+    }
+}
+
+
+
