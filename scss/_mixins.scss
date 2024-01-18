@@ -1,46 +1,133 @@
 //extends
-
+.btn-base{
+    padding:6px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+.btn-main{
+    @extend .btn-base;
+    background-color: $mainColor;
+    color: $white;
+}
+.btn-stroke{
+    @extend .btn-base;
+    background-color: $white;
+    border-color: $mainColor;
+    &:hover{
+        background-color: $mainColor;
+        border-color: $white;
+    }
+}
+.header-base{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-home{
+    @extend .header-base;
+    background-image: url(../img/headers/header-home.jpg);
+}
+.header-profeionals{
+    @extend .header-base;
+    background-image: url(../img/headers/header2.jpg);
+}
 //mixins
+@mixin textos($size,$line,$padding,$color,$align){
+    font-family: $mainFont;//variable global
+    font-size: $size;//variable local
+    line-height: $line;//var local
+    padding: $padding;//var local
+    color: $color;//var local
+    @if $align == right{text-align: right}
+    @else if $align == center {text-align: center}
+    @else if $align == left {text-align: left}
+}
+.productosDestacados p{
+    @include textos(1em,1.4em,20px, black,center)
+}
+.box-adds p{
+    @include textos(2em,2.4em,30px,$mainColor,right);
+    background-color: yellow;
+    margin-top: 10px;
+}
+
+@mixin flex($dire,$justy,$align,$wrap){
+    display: flex;
+    flex-direction: $dire;
+    justify-content: $justy;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+.box-home{
+    @include flex(row,center,flex-end,nowrap);
+    background-color: gray;
+}
+.box-col{
+    @include flex(column,flex-start,center,wrap);
+    background-color: pink;
+}
 
 //maps
-
-
+$paleta:(
+    'uno': #af40f6,
+    'dos': #df1ce6,
+    'tres':#bb20c1,
+    'cuatro':#ecdde9,
+    'cinco': #9b9a9b,
+    'seis': #292829,
+    'siete':#e205bb,
+    'ocho':#dfa1d4,
+    'nueve':#bd9eb8,
+    'diez':#e7cfe3,
+    'once': #6e646c,
+    'doce': #7f3472,
+    'trece':#3f393e,
+);
+.bg-violet{
+    background-color: map-get($map:$paleta, $key:'ocho');
+}
+.bg-light-pink{
+    background-color: map-get($map:$paleta, $key:'cuatro' );
+}
 
 // math
-// .box{
-// 	width: $width;
-// 	height: $height + 3vh;
-// 	background-color: grey;
-// }
+.box{
+	width: $width;
+	height: $height + 3vh;
+	background-color: grey;
+}
 
-// // condicionales 
-// .icon-lang{
-// 	width: 50px;
-// 	height: 50px;
-// 	background-size:contain;
-// 	background-position:center;
-// 	@if $lang == es {background-image: url(../img/icons/icono-es.jpg)}
-// 	@else if $lang == en {background: url(../img/icons/icono-en.jpg)}
-// 	@else if $lang == fr {background: url(../img/icons/icono-fr.jpg)}
-// 	@else{background: url(../img/icons/icono-any.jpg)};
-// }
+// condicionales 
+.icon-lang{
+	width: 50px;
+	height: 50px;
+	background-size:contain;
+	background-position:center;
+	@if $lang == es {background-image: url(../img/icons/icono-es.jpg)}
+	@else if $lang == en {background: url(../img/icons/icono-en.jpg)}
+	@else if $lang == fr {background: url(../img/icons/icono-fr.jpg)}
+	@else{background: url(../img/icons/icono-any.jpg)};
+}
 
-// // bucles
-// @for $i from 1 through 6{
-// 	.text-#{$i}{
-// 		font-size: .25em *$i;
-// 	}
-// }
+// bucles
+@for $i from 1 through 6{
+	.text-#{$i}{
+		font-size: .25em *$i;
+	}
+}
 
-// // bucle evolucionado
-// @each $icono in facebook, twitter, instagram{
-// 	.#{$icono}-icon{
-// 		background-image:url(../img/icons/#{$icono}.svg);
-// 		width: 30px;
-// 		height: 30px;
-// 		background-size:100%;
-// 		list-style: none;
-// 		margin-right: 6px;
-// 	}
-// }
+// bucle evolucionado
+@each $icono in facebook, twitter, instagram{
+	.#{$icono}-icon{
+		background-image:url(../img/icons/#{$icono}.svg);
+		width: 30px;
+		height: 30px;
+		background-size:100%;
+		list-style: none;
+		margin-right: 6px;
+	}
+}
 
